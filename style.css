@@ -1,0 +1,231 @@
+/* Variáveis CSS para facilitar ajustes */
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #00BFFF;
+    --accent-color: #fe9e8e;
+    --dark-color: #1B3566;
+    --light-color: #f4f4f4;
+    --text-color: #fff;
+    --font-family: 'Arial', sans-serif;
+    --font-size-base: 1rem;
+    --font-size-large: 1.25rem;
+    --font-size-xlarge: 1.5rem;
+}
+
+/* Reset e base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background: linear-gradient(65deg, var(--secondary-color), #7bdcfa, var(--accent-color), #f32d58e7, var(--dark-color), #0303a56e);
+    background-size: 400% 400%;
+    animation: gradient 55s ease infinite;
+    height: 100vh;
+    color: var(--text-color);
+}
+
+/* Animação do fundo */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 5rem 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Arial', Helvetica, sans-serif;
+    padding-bottom: 20px; /* Espaço entre o título e os links de navegação */
+}
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Distância extra entre o título e os links */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: var(--dark-color);
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    background-color: var(--light-color);
+    font-size: var(--font-size-large);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    transform: scale(1.05);
+}
+
+/* Seções gerais */
+section {
+    padding: 5rem 1rem;
+    font-size: var(--font-size-xlarge);
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 50px;
+}
+
+/* Grid para as cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    background-color: #000;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para caixas de interação (Visualizar) */
+.caixa-texto {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.caixa-texto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-conteudo {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.fechar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fechar:hover,
+.fechar:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    margin-bottom: 0.5rem;
+    font-size: var(--font-size-base);
+}
+
+form input, form textarea {
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--dark-color);
+    border-radius: 5px;
+    font-size: var(--font-size-base);
+}
+
+form button {
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: var(--font-size-large);
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Rodapé */
+footer {
+    background: #333;
+    color: var(--text-color);
+    text-align: center;
+    font-size: var(--font-size-base);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Botão de "Voltar ao Topo" */
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Inicialmente escondido */
+}
+
+#scrollToTop:hover {
+    background-color: #0056b3;
+}
